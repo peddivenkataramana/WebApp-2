@@ -2,16 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Assignment 10 with the changes in index file.
-  body 
-  button(type="button",class="btn btn-outline-info" onclick="doBump()") Press Me
-  div#bump Bump the count 
-  a(href="umbrella") Umbrella 
-  script.  
-    var count = 0;
-    var bump = 1;
-    function  doBump(){
-      count = count + bump;
-      bump = bump + 1 ;
-      document.getElementById("bump").innerHTML = "Count"+ count+"bump"+bump 
-    } 
+  p Welcome to #{title} 
+  br       
+  - var imageName= ['1.jpg','5.jpg','3.jpg','4.jpg','2.jpg']   
+     -for(let i=0;i<3;i++){
+        - let r=Math.floor(Math.random()*5)
+            img(src= `/images/${imageName[r]}` alt="image", height="300", width="300")
+        -}
